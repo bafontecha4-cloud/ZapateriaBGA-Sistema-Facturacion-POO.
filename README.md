@@ -6,7 +6,7 @@ I Semestre 2026
 Profesor: Mag. Carlos Adolfo Beltrán Castro  
 
 ## Integrantes
-* **Brayan Alejandro Fontecha Pardo** - C.C. 1005485444
+* **Brayan Alejandro Fontecha Pardo** - C.C. 1005485444 - Tel:3107793118 - Email: bafontecha4@gmail.com
 
 ---
 
