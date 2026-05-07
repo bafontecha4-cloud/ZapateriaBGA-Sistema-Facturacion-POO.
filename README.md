@@ -1,4 +1,4 @@
-TechPoint - Proyecto POO UTS
+Zapaterias Bucaramanga - Proyecto POO UTS
 
 **Proyecto del Semestre POO - E192**  
 Tecnología de Desarrollos de Sistemas Informáticos - UTS  
@@ -11,7 +11,9 @@ Profesor: Mag. Carlos Adolfo Beltrán Castro
 ---
 
 ##  Descripción del Proyecto
-Este sistema simula un entorno de facturación e inventario tecnológico utilizando **Java SE - SWING**. Aplica principios de POO como herencia y encapsulamiento, permitiendo la persistencia de datos mediante **SQLite**.
+El sistema busca optimizar la gestión de un negocio de calzado mediante una aplicación de escritorio sencilla y segura. Permite registrar clientes, productos, ventas y usuarios, con una interfaz clara para facilitar su uso incluso a personas con conocimientos básicos. Se desarrolló en Java SE con Swing, aplicando principios de POO, y utiliza SQLite para la persistencia de datos.
+
+Incluye inicio de sesión con roles, módulos independientes para cada área y reportes que apoyan la organización interna del establecimiento.
 
 ### Funcionalidades principales:
 - **Navegación:** Menú principal moderno con JFrames.
@@ -20,7 +22,7 @@ Este sistema simula un entorno de facturación e inventario tecnológico utiliza
 
 ## Estructura del Menú
 - **Usuarios:** Gestión de perfiles.
-- **Inventario:** CRUD de hardware y equipos.
+- **Inventario:** CRUD completo de clientes, productos, usuarios y ventas.
 - **Salir:** Cierre seguro de sesión y conexión.
 
 ## Tecnologías Usadas
