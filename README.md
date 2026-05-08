@@ -48,3 +48,10 @@ Seguridad en el manejo de credenciales de usuario.
 Persistencia confiable de datos en SQLite.
 Modularidad para facilitar futuras mejoras.
 Portabilidad: ejecutable en cualquier sistema con Java instalado.
+
+
+
+***ENLACE DRIVE***
+Nota: No permitio subir el file a github por el peso superior a 25mb.
+
+https://drive.google.com/drive/u/2/folders/1VkbYDNseDO-eKFtloUlZn_ycM-wXkDSK
