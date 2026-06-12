@@ -1,0 +1,68 @@
+BEGIN TRANSACTION;
+CREATE TABLE IF NOT EXISTS Users (
+    idUsers INTEGER PRIMARY KEY AUTOINCREMENT,
+    name VARCHAR(100),
+    username VARCHAR(50),
+    password VARCHAR(30), -- ampliado
+    rol VARCHAR(30)
+);
+CREATE TABLE IF NOT EXISTS "clients" (
+	"idclients"	INTEGER,
+	"id_card"	VARCHAR(45) UNIQUE,
+	"name"	VARCHAR(45) NOT NULL,
+	"phoneNumber"	VARCHAR(45),
+	"address"	VARCHAR(45),
+	"email"	VARCHAR(45),
+	PRIMARY KEY("idclients" AUTOINCREMENT)
+);
+CREATE TABLE IF NOT EXISTS products (
+    idproducts INTEGER PRIMARY KEY AUTOINCREMENT,
+    code VARCHAR(45) NOT NULL UNIQUE,
+    model VARCHAR(45) NOT NULL UNIQUE,
+    brand VARCHAR(45),
+    size VARCHAR(45),
+    color VARCHAR(45),
+    priceSale REAL NOT NULL,
+    stock INTEGER NOT NULL
+);
+CREATE TABLE IF NOT EXISTS sailDetail (
+    idsailDetail INTEGER PRIMARY KEY AUTOINCREMENT,
+    idsales INTEGER NOT NULL,
+    idProducts INTEGER NOT NULL,
+    amount INTEGER NOT NULL,
+    subTotal REAL NOT NULL,
+    FOREIGN KEY(idsales) REFERENCES sales(idsales),
+    FOREIGN KEY(idProducts) REFERENCES products(idproducts)
+);
+CREATE TABLE IF NOT EXISTS sales (
+    idsales INTEGER PRIMARY KEY AUTOINCREMENT,
+    factura TEXT UNIQUE NOT NULL,
+    date TEXT NOT NULL,
+    idClients INTEGER,
+    total REAL NOT NULL,
+    FOREIGN KEY(idClients) REFERENCES clients(idclients)
+);
+INSERT INTO "Users" ("idUsers","name","username","password","rol") VALUES (1,'Brayan Alejandro','Administrador','123456789','Administrador'),
+ (2,'Daniel Camilo','Dcamilo','1234','Supervisor'),
+ (3,'Isabel Gomez','Igomez','1234','Vendedor'),
+ (4,'Valeria Garcia','Vgarcia','1234','Operativo');
+INSERT INTO "clients" ("idclients","id_card","name","phoneNumber","address","email") VALUES (4,'1001001003','María Rojas','3023456789','Diagonal 20 #12-30','maria.rojas@email.com'),
+ (6,'1005485444','Brayan','3107793118','calle 17A 11A 21','bafontecha@uts.edu.co'),
+ (7,'11119885','Daren Emilio Garica','7894587415','Diagonal 15 8-44','degarcia@outlook.es'),
+ (8,'4444444','Daniel Osorio','315555','Calle 55 22-33','oso@gmail.com');
+INSERT INTO "products" ("idproducts","code","model","brand","size","color","priceSale","stock") VALUES (13,'AZ1000258','Tennis Running','Reebok','30','Azul Blanco',319900.0,17),
+ (14,'AK1000588','Sandalias Cuero','Vélez','36','Cafe Blanco',189900.0,8),
+ (15,'DAL558846','Zapatos Casuales','Croydon','38','Gris',119900.0,25),
+ (16,'RA78997','Tennis Deportivo','Puma','39','Blanco',489900.0,15),
+ (17,'PR8779','Tennis Deportivo2','Puma','40','Verde Blanco',784900.0,23),
+ (18,'PR877977','Tennis Niño','Adidas','36','Blanco Rojo',279900.0,8),
+ (19,'DL001558','Bota Cuero','Brama','41','Cafe',359900.0,13);
+INSERT INTO "sailDetail" ("idsailDetail","idsales","idProducts","amount","subTotal") VALUES (1,1,2,2,500000.0),
+ (2,1,11,1,480000.0),
+ (3,2,11,1,480000.0),
+ (4,4,13,3,959700.0);
+INSERT INTO "sales" ("idsales","factura","date","idClients","total") VALUES (1,'VC4017','24/04/2026 12:43:10',NULL,980000.0),
+ (2,'VC8571','26/04/2025 15:49:25',NULL,480000.0),
+ (3,'VC1600','06/05/2026 23:22:38',1005485444,0.0),
+ (4,'VC2635','07/05/2026 19:36:43',1005485444,959700.0);
+COMMIT;
